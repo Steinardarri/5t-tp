@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 /** 
  *
- * @author Olli
+ * @author Olli, Steinar
  */
 public class FlightManager {
     
