@@ -23,7 +23,11 @@ public class Package {
     private Date arrival;
     private int packageBookingID;
     
-    
+
+    public Package() {
+
+    }
+
     public static void main(String[] args) {
         // TODO code application logic here
     }
