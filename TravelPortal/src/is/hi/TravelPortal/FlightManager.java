@@ -1,32 +1,55 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package is.hi.TravelPortal;
+
 import java.util.List;
-import java.util.Date;
-import java.util.Arrays;
+import java.util.Calendar;
 
 /** 
  *
- * @author Olli, Steinar
+ * @author Olli
  */
 public class FlightManager {
     
-    private FlightController fc = new FlightController();
-    private List flightList;
-    private Flight[] flights;
+    //private FlightController fc = new FlightController();
+    //private List<Flight> flightList;
+    //private Flight[] flights;
+    
+    private List<Flight> depFlights;
+    private List<Flight> arrFlights;
     
     
-    
-    public List searchForFlights(String from, String to, Date date) {
+    public List searchForFlights(String from, String to, Calendar date) {
          
-        flights = fc.searchFlights(from, to, date); 
+        /*flights = fc.searchFlights(from, to, date); 
         List<Flight> flightList = Arrays.asList(flights);
-        return flightList;
+        return flightList;*/
+        
+        //TEST
+        Calendar departure = Calendar.getInstance();
+        departure.set(Calendar.YEAR, 2019);
+        departure.set(Calendar.MONTH, 1);
+        departure.set(Calendar.DATE, 1);
+        
+        Calendar arrival = Calendar.getInstance();
+        arrival.set(Calendar.YEAR, 2019);
+        arrival.set(Calendar.MONTH, 1);
+        arrival.set(Calendar.DATE, 10);
+        
+        Flight RVKAK = new Flight("Reykjavík", "Akureyri", departure);
+        Flight AKRVK = new Flight("Akureyri", "Reykjavík", arrival);
+        
+        depFlights.add(RVKAK);
+        arrFlights.add(AKRVK);
+        
+        return depFlights;
     }
     
+    public List getdepFlightList() {
+        return depFlights;
+    }
+    public List getarrFlightList() {
+        return arrFlights;
+    }
+    /*
     //Öll inntök koma frá notanda í gegnum UI
     public int bookFlight(Flight[] flights, String[] passengerNames, int[] row, char[] seat, boolean[] food, boolean[] escort, boolean[] freeCancellation){
         
