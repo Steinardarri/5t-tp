@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class SearchManager {
+public class TravelPortalController {
 
     // Managerar
     private FlightManager fm = new FlightManager();
