@@ -79,8 +79,6 @@ public class TravelPortalTest {
         System.out.println("searchForPackage");
         String from = "Reykjavík";
         String to = "Akureyri";
-        //Calendar startDate = null;
-        //Calendar endDate = null;
         TravelPortalController instance = new TravelPortalController();
         List<Package> expResult = packageList;
         List<Package> result = instance.searchForPackage(from, to, startDate, endDate);

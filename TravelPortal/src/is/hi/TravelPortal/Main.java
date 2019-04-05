@@ -11,7 +11,7 @@ import javafx.stage.Stage;
  * @author Olgeir Ingi - oia4@hi.is
  * @author Steinar Darri - sth319@hi.is
  */
-public class Main extends Application {
+public class TravelPortalMain extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {

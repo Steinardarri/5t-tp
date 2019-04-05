@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 /**
  *
- * @author Olli
+ * @author Olli, Steinar
  */
 public class TravelPortalController {
 
@@ -37,9 +37,6 @@ public class TravelPortalController {
         List<Daytour> daytours = dm.searchForDaytours(daytourName, daytourPrice, startDate);//SKOÐA INNTÖK - Væri ekki gott að hafa location inntak í þessa aðferð?
         */
 
-        //maxIndex þjónar eingöngu þeim tilgangi að passa að ekki sé verið að ítra út fyrir listanna hotels og daytours
-        int maxIndex = Math.min(hotels.size(), daytours.size());
-
         //ef fjöldi flugferða sem fara frá eða til staðars á tiltekinni dagsetningu sem notandi vill eru núll,
         //þá eru engir pakkar fyrir sett skilyrði í boði (return null)
         //einnig gildir að ef fjöldi hótela í boði á stað sem notandi vill er núll, þá eru engir pakkar fyrir sett skilyrði í boði (return null)
@@ -48,6 +45,8 @@ public class TravelPortalController {
         }
         //Annars búum við til lista af pökkum sem allir hafa sömu flugin frá og til áfangastaðar en með mismunandi hótelum og daytours
         else {
+            //maxIndex þjónar eingöngu þeim tilgangi að passa að ekki sé verið að ítra út fyrir listanna hotels og daytours
+            int maxIndex = Math.min(hotels.size(), daytours.size());
             for(int i = 0; i < maxIndex; i++) {
                 packageList.add(makePackage(depFlights, arrFlights, hotels, daytours, i));
             }

@@ -5,6 +5,7 @@
  */
 package is.hi.TravelPortal;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import java.util.List;
  */
 public class DaytourManager {
     
-    private List<Daytour> daytourList;
+    private List<Daytour> daytourList = new ArrayList<>();
     
     public List searchForDaytours(/*...*/) {
          

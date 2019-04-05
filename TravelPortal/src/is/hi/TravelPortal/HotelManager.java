@@ -1,5 +1,6 @@
 package is.hi.TravelPortal;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,7 +9,7 @@ import java.util.List;
  */
 public class HotelManager {
     
-    private List<Hotel> hotelList;
+    private List<Hotel> hotelList = new ArrayList<>();
     
     public List searchForHotels(/*...*/) {
          
