@@ -1,10 +1,15 @@
-package is.hi.TravelPortal;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package TravelPortal;
 
+import throunhugbunadar.pkg5f.pkg2019.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Calendar;
-import throunhugbunadar.pkg5f.pkg2019.Flight;
-import throunhugbunadar.pkg5f.pkg2019.Controller;
-
+import java.util.Arrays;
 
 /** 
  *
@@ -12,49 +17,25 @@ import throunhugbunadar.pkg5f.pkg2019.Controller;
  */
 public class FlightManager {
     
-    private Controller fc = new Controller();
-    //private List<Flight> flightList;
-    //private Flight[] flights;
-    
-    private List<Flight> depFlights;
-    private List<Flight> arrFlights;
+    private Search fc = new Search();
+    private ArrayList<Flight> flightList;
     
     
-    public List searchForFlights(String from, String to, Calendar date) {
+    
+    public ArrayList<Flight> searchForFlights(String from, String to, Calendar startDate, Calendar endDate) {
          
-        /*flights = fc.searchFlights(from, to, date); 
-        List<Flight> flightList = Arrays.asList(flights);
-        return flightList;*/
+        flightList = fc.searchFlight(from, to, startDate, endDate); 
+        return flightList;
         
-        //TEST
-        Calendar departure = Calendar.getInstance();
-        departure.set(Calendar.YEAR, 2019);
-        departure.set(Calendar.MONTH, 1);
-        departure.set(Calendar.DATE, 1);
-        
-        Calendar arrival = Calendar.getInstance();
-        arrival.set(Calendar.YEAR, 2019);
-        arrival.set(Calendar.MONTH, 1);
-        arrival.set(Calendar.DATE, 10);
-        
-        Flight RVKAK = new Flight("Reykjavík", "Akureyri", departure);
-        Flight AKRVK = new Flight("Akureyri", "Reykjavík", arrival);
-        
-        depFlights.add(RVKAK);
-        arrFlights.add(AKRVK);
-        
-        return depFlights;
     }
     
-    public List getdepFlightList() {
-        return depFlights;
-    }
-    public List getarrFlightList() {
-        return arrFlights;
-    }
-    /*
+
+    
     //Öll inntök koma frá notanda í gegnum UI
-    public int bookFlight(Flight[] flights, String[] passengerNames, int[] row, char[] seat, boolean[] food, boolean[] escort, boolean[] freeCancellation){
+    public int bookFlight(ArrayList<Flight> flights, String[] passengerNames, String customerName, String customerEmail, boolean[] food, boolean[] escort, boolean[] freeCancellation){
+        
+        boolean flightInsurance = true;
+        String payment = "Credit";
         
         int passengerCount = passengerNames.length;
         int bookingReference = fc.makeBookingReference();
@@ -62,10 +43,13 @@ public class FlightManager {
         
         //Fyllum passengers fylkið af farþegum sem skráðir eru af notanda
         for(int i = 0; i < passengerCount; i++) {
-            passengers[i] = fc.makePassenger(passengerNames[i], bookingReference, row[i], seat[i], food[i], escort[i], freeCancellation[i]);
+            passengers[i] = fc.makePassenger(passengerNames[i], bookingReference, -1, 'a', -1, 'a', food[i], escort[i], freeCancellation[i]);
         }
         
         //ÁFRAMHALD: BOOKFLIGHT AÐFERÐ Í FC
+        int flightBookingID = fc.bookFlight(bookingReference, customerName, customerEmail, flightInsurance, payment, flights, passengers);
+        
+        return flightBookingID;
     }
     
     //GETTER&SETTER fyrir flightList (þarf það?)
