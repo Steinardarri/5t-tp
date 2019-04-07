@@ -1,7 +1,19 @@
-package is.hi.TravelPortal;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package TravelPortal;
+
+import Daytour.*;
+import throunhugbunadar.pkg5f.pkg2019.*;
+//import hotelpakki;
 
 import java.util.List;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.Calendar;
+
+
 
 /**
  *
@@ -9,12 +21,12 @@ import java.util.Date;
  */
 public class Package {
 
-    private List confirmedFlights;
-    private List confirmedHotels;
-    private List confirmedDaytours;
+    private ArrayList<Flight> confirmedFlights = new ArrayList<>();
+    private ArrayList<Hotel> confirmedHotels = new ArrayList<>();
+    private ArrayList<Tour> confirmedDaytours = new ArrayList<>();
     private int totalPrice;
-    private Date departure;
-    private Date arrival;
+    private Calendar departure;
+    private Calendar arrival;
     private int packageBookingID;
     
     
@@ -44,16 +56,28 @@ public class Package {
         return totalPrice;
     }
     
-    public Date getDeparture() {
+    public Calendar getDeparture() {
         return departure;
     }
     
-    public Date getArrival() {
+    public Calendar getArrival() {
         return arrival;
     }
     
     
     //SETTERS
+    public void addConfirmedFlights(ArrayList<Flight> flights) {
+        confirmedFlights.addAll(flights);
+    }
+    
+    public void addConfirmedHotels(ArrayList<Hotel> hotels) {
+        confirmedHotels.addAll(hotels);
+    }
+    
+    public void addConfirmedDaytours(ArrayList<Tour> daytours) {
+        confirmedDaytours.addAll(daytours);
+    }
+    
     public void setConfirmedFlights(List Flights) {
         confirmedFlights = Flights;
     }
@@ -74,11 +98,11 @@ public class Package {
         totalPrice = price;
     }
     
-    public void setDeparture(Date depart) {
+    public void setDeparture(Calendar depart) {
         departure = depart;
     }
     
-    public void setArrival(Date arriv) {
+    public void setArrival(Calendar arriv) {
         arrival = arriv;
     }
 }
