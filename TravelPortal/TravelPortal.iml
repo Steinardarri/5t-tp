@@ -32,5 +32,29 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="Flug" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../throunhugbunadar-5f-2019" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../throunhugbunadar-5f-2019/src" />
+          <root url="file://$MODULE_DIR$/../../throunhugbunadar-5f-2019/test" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../Daytour" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../Daytour/src" />
+          <root url="file://$MODULE_DIR$/../Daytour/test" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

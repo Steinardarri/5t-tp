@@ -1,5 +1,5 @@
 
-package TravelPortal;
+package is.hi.TravelPortal;
 
 import java.util.Calendar;
 import java.util.List;
@@ -10,8 +10,7 @@ import java.util.Arrays;
  *
  * @author Olli
  */
-public class TravelPortalController {
-    
+public class TravelPortal {
     
     private FlightManager fm = new FlightManager();
     private HotelManager hm = new HotelManager();

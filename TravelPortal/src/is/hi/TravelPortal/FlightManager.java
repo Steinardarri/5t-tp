@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package TravelPortal;
+package is.hi.TravelPortal;
 
 import throunhugbunadar.pkg5f.pkg2019.*;
 import java.util.ArrayList;
@@ -20,16 +15,12 @@ public class FlightManager {
     private Search fc = new Search();
     private ArrayList<Flight> flightList;
     
-    
-    
     public ArrayList<Flight> searchForFlights(String from, String to, Calendar startDate, Calendar endDate) {
-         
-        flightList = fc.searchFlight(from, to, startDate, endDate); 
-        return flightList;
-        
-    }
-    
 
+        flightList = fc.searchFlight(from, to, startDate, endDate);
+
+        return flightList;
+    }
     
     //Öll inntök koma frá notanda í gegnum UI
     public int bookFlight(ArrayList<Flight> flights, String[] passengerNames, String customerName, String customerEmail, boolean[] food, boolean[] escort, boolean[] freeCancellation){

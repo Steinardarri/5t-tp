@@ -1,24 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package TravelPortal;
+package is.hi.TravelPortal;
 
-import Daytour.*;
+import daytour.*;
 import java.util.Calendar;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
 /**
  *
  * @author Olli
  */
-
-
-
 public class DaytourManager {
     
     private ArrayList<Tour> daytourList = new ArrayList<>();
@@ -39,8 +30,6 @@ public class DaytourManager {
         return daytourList;
     }
     
-    
-    
     public void bookDaytour(ArrayList<Tour> daytourList, String customerName, String customerAddress) {
         
         int daytourCount = daytourList.size();
@@ -49,9 +38,6 @@ public class DaytourManager {
             dc.addTour(daytourList.get(i), customerName, customerAddress);
         }
     }
-    
-    
-    
     
     //GETTER&SETTER fyrir daytourList (þarf það?)
     /*

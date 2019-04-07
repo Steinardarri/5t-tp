@@ -3,26 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TravelPortal;
+package is.hi.TravelPortal;
 
 import java.util.Calendar;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import
+
 /**
  *
  * @author Olli
  */
 
-
-
 public class HotelManager {
     
     private List<Hotel> hotelList;
     private HotelController hc = new HotelController();
-    
-    
     
     public List searchForHotels(String name, String location, Calendar date, double rating) {
          
