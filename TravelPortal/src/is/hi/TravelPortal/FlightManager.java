@@ -2,6 +2,9 @@ package is.hi.TravelPortal;
 
 import java.util.List;
 import java.util.Calendar;
+import throunhugbunadar.pkg5f.pkg2019.Flight;
+import throunhugbunadar.pkg5f.pkg2019.Controller;
+
 
 /** 
  *
@@ -9,7 +12,7 @@ import java.util.Calendar;
  */
 public class FlightManager {
     
-    //private FlightController fc = new FlightController();
+    private Controller fc = new Controller();
     //private List<Flight> flightList;
     //private Flight[] flights;
     

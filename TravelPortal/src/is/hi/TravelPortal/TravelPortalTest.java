@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import throunhugbunadar.pkg5f.pkg2019.Flight;
 
 /**
  *
@@ -36,7 +37,7 @@ public class TravelPortalTest {
     }
 
     /**
-     * Test of searchForPackage method, of class TravelPortalController.
+     * Test of searchForPackage method, of class TravelPortal.
      */
     @Test
     public void testSearchForPackage() {
@@ -79,7 +80,7 @@ public class TravelPortalTest {
         System.out.println("searchForPackage");
         String from = "Reykjavík";
         String to = "Akureyri";
-        TravelPortalController instance = new TravelPortalController();
+        TravelPortal instance = new TravelPortal();
         List<Package> expResult = packageList;
         List<Package> result = instance.searchForPackage(from, to, startDate, endDate);
         assertEquals(expResult, result);
