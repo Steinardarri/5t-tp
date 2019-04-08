@@ -1,11 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package TravelPortal;
+
+import Daytour.*;
+import throunhugbunadar.pkg5f.pkg2019.*;
+//import hotelpakki;
+
 import java.util.List;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.Calendar;
 
 
 
@@ -15,13 +16,13 @@ import java.util.Date;
  */
 public class Package {
 
-    private List confirmedFlights;
-    private List confirmedHotels;
-    private List confirmedDaytours;
+    private ArrayList<Flight> confirmedFlights = new ArrayList<>();
+    private ArrayList<Hotel> confirmedHotels = new ArrayList<>();
+    private ArrayList<Tour> confirmedDaytours = new ArrayList<>();
     private int totalPrice;
-    private Date departure;
-    private Date arrival;
-    private int packageBookingID;
+    private Calendar departure;
+    private Calendar arrival;
+    private PackageBooking packageBooking;
     
     
     public static void main(String[] args) {
@@ -42,49 +43,69 @@ public class Package {
         return confirmedDaytours;
     }
     
-    public int getPackageBookingID() {
-        return packageBookingID;
+    public PackageBooking getPackageBooking() {
+        return packageBooking;
     }
     
     public int getTotalPrice() {
         return totalPrice;
     }
     
-    public Date getDeparture() {
+    public Calendar getDeparture() {
         return departure;
     }
     
-    public Date getArrival() {
+    public Calendar getArrival() {
         return arrival;
     }
     
     
+    
+    public void addConfirmedFlights(ArrayList<Flight> flights) {
+        confirmedFlights.addAll(flights);
+    }
+    
+    public void addConfirmedHotels(ArrayList<Hotel> hotels) {
+        confirmedHotels.addAll(hotels);
+    }
+    
+    public void addConfirmedDaytours(ArrayList<Tour> daytours) {
+        confirmedDaytours.addAll(daytours);
+    }
+    
+    //Þessi aðferð sóar minni eins og er, þyrfti að uppfæra
+    public Package clearPackage(Package myPackage) {
+        Package clearPackage = new Package();
+        
+        return clearPackage;
+    }
+    
     //SETTERS
-    public void setConfirmedFlights(List Flights) {
-        confirmedFlights = Flights;
+    public void setConfirmedFlights(ArrayList<Flight> flights) {
+        confirmedFlights = flights;
     }
     
-    public void setConfirmedHotels(List Hotels) {
-        confirmedHotels = Hotels;
+    public void setConfirmedHotels(ArrayList<Hotel> hotels) {
+        confirmedHotels = hotels;
     }
     
-    public void setConfirmedDaytours(List Daytours) {
-        confirmedDaytours = Daytours;
+    public void setConfirmedDaytours(ArrayList<Tour> daytours) {
+        confirmedDaytours = daytours;
     }
     
-    public void setPackageBookingID(int ID) {
-        packageBookingID = ID;
+    public void setPackageBooking(PackageBooking packBook) {
+        packageBooking = packBook;
     }
     
     public void setTotalPrice(int price) {
         totalPrice = price;
     }
     
-    public void setDeparture(Date depart) {
+    public void setDeparture(Calendar depart) {
         departure = depart;
     }
     
-    public void setArrival(Date arriv) {
+    public void setArrival(Calendar arriv) {
         arrival = arriv;
     }
 }
