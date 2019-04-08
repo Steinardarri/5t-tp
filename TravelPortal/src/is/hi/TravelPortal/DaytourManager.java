@@ -1,13 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package is.hi.TravelPortal;
 
-import java.util.ArrayList;
+import daytour.Tour;
+import daytour.Search;
 import java.util.Calendar;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -15,23 +13,42 @@ import java.util.List;
  */
 public class DaytourManager {
     
-    private List<Daytour> daytourList = new ArrayList<>();
+    private ArrayList<Tour> daytourList = new ArrayList<>();
+    private Search dc = new Search();
     
-    public List searchForDaytours(/*...*/) {
+    /**
+    * Search for Tours from database with matching name, price, date and location
+    * 
+    * @param searchInput
+    * @param location
+    * @param pricebar   (price range from pricebar[0] to pricebar[1])
+    * @param datebar    (date range from datebar[0] to datebar[1])
+    * @return resulting tours as ArrayList of objects
+    */
+    public ArrayList<Tour> searchForDaytours(String searchInput, String location, int[] pricebar, Calendar[] datebar) {
          
-        Calendar date = Calendar.getInstance();
-        date.set(Calendar.YEAR, 2019);
-        date.set(Calendar.MONTH, 1);
-        date.set(Calendar.DATE, 1);
-        
-        Daytour daytourAK = new Daytour("daytourAK", "Akureyri", date, 20000);
-        daytourList.add(daytourAK);
-        
+        daytourList = dc.getTours(searchInput, location, pricebar, datebar);
         return daytourList;
     }
     
+    public void bookDaytour(ArrayList<Tour> daytourList, String customerName, String customerAddress) {
+        
+        int daytourCount = daytourList.size();
+        
+        for(int i = 0; i < daytourCount; i++) {
+            dc.addTour(daytourList.get(i), customerName, customerAddress);
+        }
+    }
+    
+    //GETTER&SETTER fyrir daytourList (þarf það?)
+    /*
     public List getDaytourList() {
         return daytourList;
     }
+    
+    public void setDaytourList(List daytoursList) {
+        daytourList = daytoursList;
+    }
+    */
     
 }

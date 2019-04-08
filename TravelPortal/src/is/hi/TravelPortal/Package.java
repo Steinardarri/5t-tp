@@ -1,7 +1,17 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package is.hi.TravelPortal;
 
+import daytour.*;
+import throunhugbunadar.pkg5f.pkg2019.*;
+import hotel.Hotel;
+
 import java.util.List;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  *
@@ -9,12 +19,12 @@ import java.util.Date;
  */
 public class Package {
 
-    private List confirmedFlights;
-    private List confirmedHotels;
-    private List confirmedDaytours;
+    private List<Flight> confirmedFlights = new ArrayList<>();
+    private List<Hotel> confirmedHotels = new ArrayList<>();
+    private List<Tour> confirmedDaytours = new ArrayList<>();
     private int totalPrice;
-    private Date departure;
-    private Date arrival;
+    private Calendar departure;
+    private Calendar arrival;
     private int packageBookingID;
     
     
@@ -44,25 +54,35 @@ public class Package {
         return totalPrice;
     }
     
-    public Date getDeparture() {
+    public Calendar getDeparture() {
         return departure;
     }
     
-    public Date getArrival() {
+    public Calendar getArrival() {
         return arrival;
     }
     
     
     //SETTERS
-    public void setConfirmedFlights(List Flights) {
+    public void addConfirmedFlights(List<Flight> flights) {
+        confirmedFlights.addAll(flights);
+    }
+
+    public void addConfirmedHotels(List<Hotel> hotels) { confirmedHotels.addAll(hotels); }
+
+    public void addConfirmedDaytours(List<Tour> daytours) {
+        confirmedDaytours.addAll(daytours);
+    }
+    
+    public void setConfirmedFlights(List<Flight> Flights) {
         confirmedFlights = Flights;
     }
     
-    public void setConfirmedHotels(List Hotels) {
+    public void setConfirmedHotels(List<Hotel> Hotels) {
         confirmedHotels = Hotels;
     }
     
-    public void setConfirmedDaytours(List Daytours) {
+    public void setConfirmedDaytours(List<Tour> Daytours) {
         confirmedDaytours = Daytours;
     }
     
@@ -74,11 +94,11 @@ public class Package {
         totalPrice = price;
     }
     
-    public void setDeparture(Date depart) {
+    public void setDeparture(Calendar depart) {
         departure = depart;
     }
     
-    public void setArrival(Date arriv) {
+    public void setArrival(Calendar arriv) {
         arrival = arriv;
     }
 }

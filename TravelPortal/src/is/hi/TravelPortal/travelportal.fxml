@@ -8,6 +8,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.TravelPortal.TravelPortalController">
     <children>
+      <Text layoutX="306.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Travel Portal">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Text>
       <GridPane hgap="10.0" layoutX="52.0" layoutY="75.0" prefHeight="350.0" prefWidth="300.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -100,10 +105,5 @@
          </children>
       </Pane>
       <ListView layoutX="164.0" layoutY="465.0" prefHeight="113.0" prefWidth="622.0" />
-      <Text layoutX="306.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Travel Portal">
-         <font>
-            <Font size="48.0" />
-         </font>
-      </Text>
     </children>
 </AnchorPane>
