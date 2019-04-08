@@ -1,6 +1,7 @@
 
 package is.hi.TravelPortal;
 
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.List;
 import java.util.ArrayList;
@@ -35,8 +36,6 @@ public class TravelPortal {
         datebar[0] = startDate;
         datebar[1] = endDate;
         List<Tour> daytours = dm.searchForDaytours("", to, pricebar, datebar);
-        
-        
 
         
         //ef fjöldi flugferða sem fara frá eða til staðars á tiltekinni dagsetningu sem notandi vill eru núll, 
@@ -82,4 +81,18 @@ public class TravelPortal {
         
         return pack;
     }
+
+
+
+
+    public List<Flight> leitaFlug(LocalDate dep, LocalDate arr, String from, String to) {
+
+        Calendar cdep = Calendar.getInstance();
+        cdep.set(dep.getYear(), dep.getMonthValue()-1, dep.getDayOfMonth());
+        Calendar carr = Calendar.getInstance();
+        carr.set(arr.getYear(), arr.getMonthValue()-1, arr.getDayOfMonth());
+
+        return fm.searchForFlights(from, to, cdep, carr);
+    }
+
 }

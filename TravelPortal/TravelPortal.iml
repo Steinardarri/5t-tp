@@ -5,7 +5,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" scope="TEST">
       <library name="JUnit5.0">
@@ -46,23 +46,22 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../Daytour" />
+          <root url="file://$MODULE_DIR$/../HotelM" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="file://$MODULE_DIR$/../Daytour/src" />
-          <root url="file://$MODULE_DIR$/../Daytour/test" />
+          <root url="file://$MODULE_DIR$/../HotelM/src" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../HotelM" />
+          <root url="file://$MODULE_DIR$/../Daytour" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="file://$MODULE_DIR$/../HotelM/src" />
+          <root url="file://$MODULE_DIR$/../Daytour/src" />
         </SOURCES>
       </library>
     </orderEntry>

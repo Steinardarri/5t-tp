@@ -1,13 +1,20 @@
 package is.hi.TravelPortal;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
+
+import java.util.List;
 import java.util.ResourceBundle;
 import java.net.URL;
 import java.time.LocalDate;
 import javafx.fxml.Initializable;
+
+import throunhugbunadar.pkg5f.pkg2019.*;
 
 public class TravelPortalController implements Initializable {
 
@@ -41,9 +48,14 @@ public class TravelPortalController implements Initializable {
     @FXML
     private DatePicker tourTo;
 
+    // Listar
+    @FXML
+    private ListView<Flight> searchedFlights;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         tp = new TravelPortal();
+        searchedFlights = new ListView<>();
     }
 
     @FXML
@@ -53,6 +65,10 @@ public class TravelPortalController implements Initializable {
         String from = flightFrom.getText();
         String to = flightTo.getText();
 
+
+        List<Flight> flug = tp.leitaFlug(dep, arr, from, to);
+        ObservableList<Flight> obl = FXCollections.observableArrayList(flug);
+        searchedFlights.setItems(obl);
 
     }
 

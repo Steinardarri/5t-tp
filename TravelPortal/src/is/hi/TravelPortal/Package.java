@@ -5,7 +5,7 @@
  */
 package is.hi.TravelPortal;
 
-import daytour.*;
+import daytour.Tour;
 import throunhugbunadar.pkg5f.pkg2019.*;
 import hotel.Hotel;
 

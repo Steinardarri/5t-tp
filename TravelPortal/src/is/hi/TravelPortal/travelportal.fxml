@@ -76,7 +76,19 @@
             </Text>
             <TabPane layoutY="36.0" prefHeight="300.0" prefWidth="300.0" tabClosingPolicy="UNAVAILABLE">
               <tabs>
-                <Tab text="Untitled Tab 1">
+                <Tab text="Flights">
+                     <content>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <ListView fx:id="searchedFlights" prefHeight="257.0" prefWidth="283.0" />
+                           </content>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </ScrollPane>
+                     </content>
+                </Tab>
+                <Tab text="Hotels">
                      <content>
                         <ScrollPane prefHeight="200.0" prefWidth="200.0">
                            <content>
@@ -88,7 +100,7 @@
                         </ScrollPane>
                      </content>
                 </Tab>
-                <Tab text="Untitled Tab 2">
+                  <Tab text="Daytours">
                      <content>
                         <ScrollPane prefHeight="200.0" prefWidth="200.0">
                            <content>
@@ -99,11 +111,11 @@
                            </padding>
                         </ScrollPane>
                      </content>
-                </Tab>
+                  </Tab>
               </tabs>
             </TabPane>
          </children>
       </Pane>
-      <ListView layoutX="164.0" layoutY="465.0" prefHeight="113.0" prefWidth="622.0" />
+      <TextArea fx:id="errorArea" layoutX="482.0" layoutY="436.0" prefHeight="94.0" prefWidth="200.0" />
     </children>
 </AnchorPane>
