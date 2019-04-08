@@ -31,7 +31,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="Flug" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -53,6 +52,17 @@
         <SOURCES>
           <root url="file://$MODULE_DIR$/../Daytour/src" />
           <root url="file://$MODULE_DIR$/../Daytour/test" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../HotelM" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../HotelM/src" />
         </SOURCES>
       </library>
     </orderEntry>

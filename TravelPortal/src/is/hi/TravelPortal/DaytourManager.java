@@ -1,6 +1,7 @@
 package is.hi.TravelPortal;
 
-import daytour.*;
+import daytour.Tour;
+import daytour.Search;
 import java.util.Calendar;
 import java.util.List;
 import java.util.ArrayList;

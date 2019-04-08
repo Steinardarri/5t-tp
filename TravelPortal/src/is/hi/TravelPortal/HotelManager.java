@@ -10,7 +10,9 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import
+import hotel.Booking;
+import hotel.Controller;
+import hotel.Hotel;
 
 /**
  *
@@ -20,24 +22,17 @@ import
 public class HotelManager {
     
     private List<Hotel> hotelList;
-    private HotelController hc = new HotelController();
+    private Controller hc = new Controller();
     
-    public List searchForHotels(String name, String location, Calendar date, double rating) {
-         
-        hotelList = hc.search(name, location, date, rating);
-        return hotelList;
+    public List<Hotel> searchForHotels(String name, String city, double rating,int count, Calendar in, Calendar out) {
+
+        return hc.search(name, city, rating,count, in, out);
     }
     
     
-    public List bookRoom(List<Hotel> hotelList, int[] peopleCount, Calendar[] startDate, Calendar[] endDate) {
-        
-        int hotelCount = hotelList.size();
-        List<hotelBooking> hotelBookings = new ArrayList<>();
-        
-        for(int i = 0; i < hotelCount; i++) {
-            hotel = hotelList.get(i);
-            hotelBookings.add(hc.bookRoom(hotel.getHotelID, peopleCount[i], startDate[i], endDate[i]));
-        }
+    public List bookRoom(Hotel hotel, int[] peopleCount, Calendar inDate, Calendar outDate) {
+
+        List<Booking> hotelBookings = new ArrayList<>();
         
         return hotelBookings;
     }

@@ -1,5 +1,6 @@
 package hotel;
 
+import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class Hotel {
         bookings=new LinkedList<>();
     }
     
-    public boolean isFreeRoom(int hotelId,int peopleCount,String date){
+    public boolean isFreeRoom(int hotelId, int peopleCount, Calendar in, Calendar out){
         
         return false;
     }

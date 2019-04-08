@@ -5,6 +5,9 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import throunhugbunadar.pkg5f.pkg2019.*;
+import daytour.Tour;
+import hotel.Hotel;
 
 /**
  *
@@ -24,8 +27,8 @@ public class TravelPortal {
         
         List<Flight> depFlights = fm.searchForFlights(from, to, startDate, startDate);
         List<Flight> arrFlights = fm.searchForFlights(to, from, endDate, endDate);
-        
-        List<Hotel> hotels = hm.searchForHotels("", to, startDate, rating);
+
+        List<Hotel> hotels = hm.searchForHotels("", to, 1.0, 1, startDate, endDate);
         
         int[] pricebar = new int[0];
         Calendar[] datebar = new Calendar[2];

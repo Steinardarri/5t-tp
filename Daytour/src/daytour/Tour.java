@@ -57,8 +57,8 @@ public class Tour {
 	 */
 	public static void main(String[] args) {
 		Date today = new Date();
-		Tour tour = new Tour(1, "TourA", today, "???", 180, "English", 10000, 2, 18, "Reykjavík", "Cold");
-		Tour tour2 = new Tour(1, "TourB", today, "???", 180, "Icelandic", 10000, 2, 18, "Reykjavík", "Freezing");
+		Tour tour = new Tour(1, "TourA", today, "???", 180, "English", 10000, 2, 18, "Reykjavï¿½k", "Cold");
+		Tour tour2 = new Tour(1, "TourB", today, "???", 180, "Icelandic", 10000, 2, 18, "Reykjavï¿½k", "Freezing");
 		System.out.println(tour);
 		System.out.println(tour2);
 	}

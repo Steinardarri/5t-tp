@@ -8,7 +8,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-
 public class Search {
 
 	/**
@@ -112,7 +111,7 @@ public class Search {
 			System.out.println(matchingTours.get(i));
 		}
 		
-		addTour(matchingTours.get(0), "svn5", "Kópavogur");
+		addTour(matchingTours.get(0), "svn5", "Kï¿½pavogur");
 	}
 
 }

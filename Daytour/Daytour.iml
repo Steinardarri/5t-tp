@@ -15,7 +15,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="10" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="module-library">
       <library name="sqlite-jdbc-3.27.2.1.jar">
         <CLASSES>

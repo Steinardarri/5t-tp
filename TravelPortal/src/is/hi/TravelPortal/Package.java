@@ -3,17 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TravelPortal;
+package is.hi.TravelPortal;
 
-import Daytour.*;
+import daytour.*;
 import throunhugbunadar.pkg5f.pkg2019.*;
-//import hotelpakki;
+import hotel.Hotel;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Calendar;
-
-
 
 /**
  *
@@ -21,9 +19,9 @@ import java.util.Calendar;
  */
 public class Package {
 
-    private ArrayList<Flight> confirmedFlights = new ArrayList<>();
-    private ArrayList<Hotel> confirmedHotels = new ArrayList<>();
-    private ArrayList<Tour> confirmedDaytours = new ArrayList<>();
+    private List<Flight> confirmedFlights = new ArrayList<>();
+    private List<Hotel> confirmedHotels = new ArrayList<>();
+    private List<Tour> confirmedDaytours = new ArrayList<>();
     private int totalPrice;
     private Calendar departure;
     private Calendar arrival;
@@ -66,27 +64,25 @@ public class Package {
     
     
     //SETTERS
-    public void addConfirmedFlights(ArrayList<Flight> flights) {
+    public void addConfirmedFlights(List<Flight> flights) {
         confirmedFlights.addAll(flights);
     }
-    
-    public void addConfirmedHotels(ArrayList<Hotel> hotels) {
-        confirmedHotels.addAll(hotels);
-    }
-    
-    public void addConfirmedDaytours(ArrayList<Tour> daytours) {
+
+    public void addConfirmedHotels(List<Hotel> hotels) { confirmedHotels.addAll(hotels); }
+
+    public void addConfirmedDaytours(List<Tour> daytours) {
         confirmedDaytours.addAll(daytours);
     }
     
-    public void setConfirmedFlights(List Flights) {
+    public void setConfirmedFlights(List<Flight> Flights) {
         confirmedFlights = Flights;
     }
     
-    public void setConfirmedHotels(List Hotels) {
+    public void setConfirmedHotels(List<Hotel> Hotels) {
         confirmedHotels = Hotels;
     }
     
-    public void setConfirmedDaytours(List Daytours) {
+    public void setConfirmedDaytours(List<Tour> Daytours) {
         confirmedDaytours = Daytours;
     }
     
