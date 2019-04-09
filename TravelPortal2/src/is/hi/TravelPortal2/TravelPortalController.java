@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 
 import throunhugbunadar.pkg5f.pkg2019.*;
 import daytour.Tour;
+import hotel.Hotel;
 
 public class TravelPortalController implements Initializable {
 
@@ -52,19 +53,26 @@ public class TravelPortalController implements Initializable {
 
     // Listar
     @FXML
-    private ListView<Flight> searchedFlights;
+    private ListView<String> searchedFlights;
+    private ObservableList<String>  flugListi;
+    @FXML
+    private ListView<Hotel> searchedHotels;
     @FXML
     private ListView<Tour> searchedDaytours;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         tp = new TravelPortal();
+        System.out.println("test1");
+        flugListi = FXCollections.observableArrayList (
+                "Single", "Double", "Suite", "Family App");
         searchedFlights = new ListView<>();
+        searchedFlights.setItems(flugListi);
         searchedDaytours = new ListView<>();
     }
 
     @FXML
-    private void leitaFlugHandler(ActionEvent event) {
+    public void leitaFlugHandler(ActionEvent event) {
         try {
             LocalDate dep = flightDep.getValue();
             LocalDate arr = flightArr.getValue();
@@ -77,6 +85,7 @@ public class TravelPortalController implements Initializable {
         } catch (Exception e) {
             errorArea.setText("Villa: " + e);
         }
+
     }
 
     @FXML

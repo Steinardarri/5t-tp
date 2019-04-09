@@ -17,16 +17,7 @@ public class FlightManager {
     
     public ArrayList<Flight> searchForFlights(String from, String to, Calendar startDate, Calendar endDate) {
 
-        //flightList = fc.searchFlight(from, to, startDate, endDate);
-
-        boolean[][] saeti = new boolean[2][2];
-        saeti[0][0] = true;
-
-        Flight testFlug = new Flight(100, from, to, "Flugfélag Íslands", startDate, 16, 17, 19, saeti);
-
-        this.flightList.add(testFlug);
-
-        return this.flightList;
+        return fc.searchFlight(from, to, startDate, endDate);
     }
     
     //Öll inntök koma frá notanda í gegnum UI

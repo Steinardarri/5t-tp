@@ -87,6 +87,7 @@ public class TravelPortal {
 
         Calendar cdep = Calendar.getInstance();
         cdep.set(dep.getYear(), dep.getMonthValue()-1, dep.getDayOfMonth());
+        System.out.println("dep = " + dep.getYear() + " " + dep.getMonthValue() + " -1 " + dep.getDayOfMonth());
         Calendar carr = Calendar.getInstance();
         carr.set(arr.getYear(), arr.getMonthValue()-1, arr.getDayOfMonth());
 
