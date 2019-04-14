@@ -31,12 +31,11 @@ public class DaytourManager {
         return daytourList;
     }
     
-    public void bookDaytour(ArrayList<Tour> daytourList, String customerName, String customerAddress) {
-        
-        int daytourCount = daytourList.size();
-        
-        for(int i = 0; i < daytourCount; i++) {
-            dc.addTour(daytourList.get(i), customerName, customerAddress);
+    //Daytour skilar ekki bookingID
+    public void bookDaytour(Tour daytour, String customerName, String customerAddress) {
+
+            dc.addTour(daytour, customerName, customerAddress);
+
         }
     }
     
