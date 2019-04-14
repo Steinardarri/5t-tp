@@ -17,19 +17,25 @@ import hotel.Hotel;
 public class HotelManager {
     
     private List<Hotel> hotelList;
-    private Controller hc = new Controller();
+    private HotelController hc = new HotelController();
     
-    public List<Hotel> searchForHotels(String name, String city, double rating,int count, Calendar in, Calendar out) {
-
-        return hc.search(name, city, rating,count, in, out);
+    
+    
+    public ArrayList<Hotel> searchForHotels(String name, String location, Calendar date, double rating) {
+         
+        hotelList = hc.search(name, location, date, rating);
+        return hotelList;
     }
     
     
-    public List bookRoom(Hotel hotel, int[] peopleCount, Calendar inDate, Calendar outDate) {
-
-        List<Booking> hotelBookings = new ArrayList<>();
+    public int bookRoom(Hotel hotel, int peopleCount, Calendar startDate, Calendar endDate) {
         
-        return hotelBookings;
+        Booking hotelBooking = new Booking();
+        
+        hotelBooking = hc.bookRoom(hotel.getHotelID, peopleCount, startDate, endDate);
+        int hotelBookingID = hotelBooking.getId();
+        
+        return hotelBookingID;
     }
     
     
