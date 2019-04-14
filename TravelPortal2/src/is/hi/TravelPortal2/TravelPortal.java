@@ -81,6 +81,33 @@ public class TravelPortal {
     }
 
 
+    //Pakkabókunarfall ef pakki inniheldur flug fram og til baka, hótel og daytour
+    //Inntök fyrir hótelpöntun mjög óljós
+    public PackageBooking bookPackage(Package myPackage, String[] passengerNames, String customerName, String customerEmail, String customerAddress, boolean[] food, boolean[] escort, boolean[] freeCancellation, Calendar hotelStartDate, Calendar hotelEndDate) {
+        
+        PackageBooking booking = new PackageBooking();
+        int packageBookingID = generateID();
+        
+        ArrayList<Flight> flights = myPackage.getConfirmedFlights();
+        int flightBookingID = fm.bookFlight(flights, passengerNames, customerName, customerEmail, food, escort, freeCancellation);
+        booking.setFlightBookingID(flightBookingID);
+        
+        Hotel hotel = myPackage.getConfirmedHotels();
+        int hotelBookingID = hm.bookRoom(hotel, passengerNames.length, hotelStartDate, hotelEndDate);
+        booking.setHotelBookingID(hotelBookingID);
+        
+        Tour daytour = myPackage.getConfirmedDaytours();
+        dm.bookDaytour(daytour, customerName, customerAddress);
+        //daytour skilar ekki bookingID svo ekkert verður vistað í packagebooking
+        
+        booking.setPackageBookingID(packageBookingID);
+    }
+    
+    //Ekki tryggt að packageBookingID verði aldrei það sama, en þetta er nóg fyrir það sem við þurfum að nota það í
+    public int generateID() {
+        return (int)(Math.random()*1000000);
+    }
+}
 
 
     public List<Flight> leitaFlug(LocalDate dep, LocalDate arr, String from, String to) {
